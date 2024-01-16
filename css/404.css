@@ -1,0 +1,544 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(38, 69%, 59%);
+  --text-color: hsl(38, 8%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Space Grotesk', sans-serif;
+  --biggest-font-size: 2.375rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 5rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.main {
+  overflow: hidden; /* For the animations ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo, 
+.nav__toggle {
+  color: var(--text-color);
+  display: inline-flex;
+}
+
+.nav__logo {
+  font-weight: 700;
+}
+
+.nav__toggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--first-color);
+    left: 0;
+    top: -100%;
+    width: 100%;
+    padding: 5rem 0 4rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 2px 4px hsla(38, 4%, 15%, .15);
+    transition: .4s;
+  }
+}
+
+.nav__list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.nav__link {
+  color: var(--text-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
+/*=============== HOME ===============*/
+.home {
+  background-color: var(--first-color);
+  padding: 9rem 0 2rem;
+  height: 100vh;
+  display: grid;
+}
+
+.home__container {
+  display: grid;
+  align-content: center;
+  row-gap: 2.5rem;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin: .75rem 0;
+}
+
+.home__button {
+  margin-top: 2rem;
+  display: inline-block;
+  background-color: var(--text-color);
+  color: #fff;
+  padding: .80rem 1.5rem;
+  border-radius: 3rem;
+  transition: .4s;
+}
+
+.home__button:hover {
+  box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2);
+}
+
+.home__img img {
+  width: 230px;
+  animation: floaty 1.8s infinite alternate;
+}
+
+.home__img {
+  justify-self: center;
+}
+
+.home__shadow {
+  width: 130px;
+  height: 24px;
+  background-color: hsla(38, 21%, 19%, .16);
+  margin: 0 auto;
+  border-radius: 50%;
+  filter: blur(7px);
+  animation: shadow 1.8s infinite alternate;
+}
+
+.home__footer {
+  display: flex;
+  justify-content: center;
+  column-gap: .5rem;
+  font-size: var(--smaller-font-size);
+  align-self: flex-end;
+}
+
+/* Animate ghost */
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(.85, .85);
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .home {
+    padding-top: 7rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 767px) {
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__toggle, 
+  .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 2rem;
+  }
+  .home__data {
+    text-align: initial;
+  }
+  .home__img img {
+    width: 400px;
+  }
+  .home__shadow {
+    width: 250px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1048px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.7;
+  }
+
+  .home {
+    height: initial;
+    row-gap: 4rem;
+  }
+}
+
+/* For 4K resolutions (3840 x 2160, 4096 x 2160) */
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 3.1;
+  }
+}
+
+.cls-1 {
+  fill: #ffc541;
+}
+
+.cls-2 {
+  fill: #4e4066;
+}
+
+.cls-3 {
+  fill: #6f5b92;
+}
+
+.cls-4 {
+  fill: #f78d5e;
+}
+
+.cls-5 {
+  fill: #fa976c;
+}
+
+.cls-6,
+.cls-7,
+.cls-8 {
+  fill: #b65c32;
+}
+
+.cls-10,
+.cls-6 {
+  opacity: 0.6;
+}
+
+.cls-7 {
+  opacity: 0.4;
+}
+
+.cls-9 {
+  fill: #f4b73b;
+}
+
+.cls-11 {
+  fill: #f9c358;
+}
+
+.cls-12 {
+  fill: #9b462c;
+}
+
+.cls-13 {
+  fill: #aa512e;
+}
+
+.cls-14 {
+  fill: #7d6aa5;
+}
+
+
+/* animations */
+
+.wheel {
+  animation: wheel-rotate 6s ease infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel-rotate {
+  50% {
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  100% {
+    transform: rotate(960deg)
+  }
+}
+
+.clock-hand-1 {
+  animation: clock-rotate 3s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+.clock-hand-2 {
+  animation: clock-rotate 6s linear infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes clock-rotate {
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+#box-top {
+  animation: box-top-anim 2s linear infinite;
+  transform-origin: right top;
+  transform-box: fill-box;
+}
+
+@keyframes box-top-anim {
+  50% {
+    transform: rotate(-5deg)
+  }
+}
+
+#umbrella {
+  animation: umbrella-anim 6s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes umbrella-anim {
+  25% {
+    transform: translateY(10px) rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+#cup {
+  animation: cup-rotate 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  transform-origin: top left;
+  transform-box: fill-box;
+}
+
+@keyframes cup-rotate {
+  50% {
+    transform: rotate(-5deg)
+  }
+}
+
+#pillow {
+  animation: pillow-anim 3s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes pillow-anim {
+  25% {
+    transform: rotate(10deg) translateY(5px)
+  }
+  75% {
+    transform: rotate(-10deg)
+  }
+}
+
+#stripe {
+  animation: stripe-anim 3s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes stripe-anim {
+  25% {
+    transform: translate(10px, 0) rotate(-10deg)
+  }
+  75% {
+    transform: translateX(10px)
+  }
+}
+
+#bike {
+  animation: bike-anim 6s ease infinite;
+}
+
+@keyframes bike-anim {
+  0% {
+    transform: translateX(-1300px)
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
+  100% {
+    transform: translateX(1300px)
+  }
+}
+
+#rucksack {
+  animation: ruck-anim 3s linear infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+@keyframes ruck-anim {
+  50% {
+    transform: rotate(5deg)
+  }
+}
+
+.circle {
+  animation: circle-anim ease infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+  perspective: 0px;
+}
+
+.circle.c1 {
+  animation-duration: 2s
+}
+
+.circle.c2 {
+  animation-duration: 3s
+}
+
+.circle.c3 {
+  animation-duration: 1s
+}
+
+.circle.c4 {
+  animation-duration: 1s
+}
+
+.circle.c5 {
+  animation-duration: 2s
+}
+
+.circle.c6 {
+  animation-duration: 3s
+}
+
+@keyframes circle-anim {
+  50% {
+    transform: scale(.2) rotateX(360deg) rotateY(360deg)
+  }
+}
+
+.four,
+#ou {
+  animation: four-anim cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+.four.a {
+  transform-origin: bottom left;
+  animation-duration: 3s;
+  transform-box: fill-box;
+}
+
+.four.b {
+  transform-origin: bottom right;
+  animation-duration: 3s;
+  transform-box: fill-box;
+}
+
+#ou {
+  animation-duration: 6s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes four-anim {
+  50% {
+    transform: scale(.98)
+  }
+}
