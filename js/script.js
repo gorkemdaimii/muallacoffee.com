@@ -72,3 +72,30 @@ var swiper = new Swiper(".review-slider", {
 });
 
 
+
+// Önceden belirlenmiş verileri bir dizi içinde sakla
+var preDefinedData = ["Cool Lime", "Ice Fraise", "Mualla (Çilekli)", "Mualla (Yaban Mersinli Bubble)", "Mualla (Orman Meyveli)", "Mualla (Mango)", "Mualla (Ananaslı)", "Mualla (Karadut)", "Mualla (Yeşil Elmalı)", "Mualla (Limonlu)", "Frozen", "Smoohtie","Milkshake", "Limonata", "Waffle", "Meyve Cup", "Nutellalı Asuman", "Tiramusu", "Malaga"];
+
+// Rastgele Sun butonuna tıklandığında, diziden rastgele bir veriyi seçip kullanıcıya göster
+document.getElementById('randomButton').addEventListener('click', function() {
+  var outputDiv = document.getElementById('output');
+  
+  if(preDefinedData.length > 0) {
+    // Animasyon sınıfını ekleyerek kaybolma animasyonunu başlat
+    outputDiv.classList.add('fadeOutAnimation');
+
+    // Output'u belirli bir süre sonra değiştir
+    setTimeout(function() {
+      var randomIndex = Math.floor(Math.random() * preDefinedData.length);
+      var randomData = preDefinedData[randomIndex];
+      outputDiv.textContent = 'Mualla sana şunu öneriyor: ' + randomData;
+
+      // Animasyon sınıfını kaldırarak yeniden görünme animasyonunu başlat
+      outputDiv.classList.remove('fadeOutAnimation');
+      outputDiv.classList.add('fadeInAnimation');
+    }, 0.1); // 500 milisaniye sonra yeni veriyi göster
+  } else {
+    outputDiv.textContent = 'Veri bulunmamaktadır.';
+  }
+});
+

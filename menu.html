@@ -69,7 +69,92 @@
 
 
 
+<style>
+.container {
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 12px;
+  }
+  
+button {
+  padding: 10px 20px;
+  background-color: #445A2B;
+  color: white;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Geçiş efekti ekle */
+}
+
+button:hover {
+  background-color: #8aa785;
+}
+  /* Ekran boyutlarına göre buton boyutlarını ayarla */
+  @media screen and (max-width: 600px) {
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Signika+Negative:wght@300..700&display=swap');
+  .outputt{
+    font-size: 16px;
+    font-family: "Signika Negative", sans-serif;
+    margin-top: 7px;
+    margin-bottom: 9px;
+    margin-right: 290px;
+
+
+  }
+
+
+  .baslik{
+    margin-left: 20px;
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 700px;
+    color: #445A2B;
+  }
+
+
+  * Output için animasyon sınıfları */
+.fadeOutAnimation {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeInAnimation {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+  </style>
+
+  
+
+
+
 <img src="image/mualla1.jpg" class="img22">
+
+
+<div>
+
+  <h1 class="baslik">Ne İçeceğine Hala Karar veremedin mi?</h1>
+
+</div>
+<div class="container">
+    <button id="randomButton">Bana Bir şeyler öner!</button>
+    <div class="outputt" id="output"></div>
+  </div>
+
+ 
+
+  
 <img src="image/mualla2.jpg" class="img22">
 <img src="image/mualla3.jpg" class="img22">
 <img src="image/mualla4.jpg" class="img22">
@@ -81,6 +166,7 @@
 <img src="image/mualla10.jpg" class="img22">
 <img src="image/mualla11.jpg" class="img22">
 <img src="image/mualla12.jpg" class="img22">
+
 
 
 
