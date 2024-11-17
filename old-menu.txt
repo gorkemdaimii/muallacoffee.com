@@ -155,17 +155,17 @@ button:hover {
  
 
   
- <img src="image/mualla2.jpg" class="img22">
- <img src="image/mualla3.jpg" class="img22">
- <img src="image/mualla4.jpg" class="img22">
- <img src="image/mualla5.jpg" class="img22">
- <img src="image/mualla6.jpg" class="img22">
- <img src="image/mualla7.jpg" class="img22">
- <img src="image/mualla8.jpg" class="img22">
- <img src="image/mualla9.jpg" class="img22">
- <img src="image/mualla10.jpg" class="img22">
- <img src="image/mualla11.jpg" class="img22">
- <img src="image/mualla12.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla2.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla3.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla4.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla5.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla6.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla7.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla8.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla9.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla10.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla11.jpg" class="img22">
+ <img src="image/Menu-NEW/mualla12.jpg" class="img22">
 
 
 
