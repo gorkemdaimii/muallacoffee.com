@@ -75,7 +75,7 @@ var swiper = new Swiper(".review-slider", {
 
 // Önceden belirlenmiş verileri bir dizi içinde sakla
 //var preDefinedData = ["Cool Lime", "Ice Fraise", "Mualla (Çilekli)", "Mualla (Yaban Mersinli Bubble)", "Mualla (Orman Meyveli)", "Mualla (Mango)", "Mualla (Ananaslı)", "Mualla (Karadut)", "Mualla (Yeşil Elmalı)", "Mualla (Limonlu)", "Frozen", "Smoohtie","Milkshake", "Limonata", "Waffle", "Meyve Cup", "Nutellalı Asuman" ,"Cazibe" , "Salep" , "Sıcak Çikolata" , "Mocha" , "White Mocha" , "Americano", "Bubble Ice Latte" , "Bubble Tea Lemonade", "Pumpkin Spice Latte" ,"Coconut Latte", "Nutella Special Latte" , "Caramel Latte" , "Toffee Nut Latte", "Cookie Latte"];
-var preDefinedData =["Test"]
+  var preDefinedData =["Test"];
 // Rastgele Sun butonuna tıklandığında, diziden rastgele bir veriyi seçip kullanıcıya göster
 document.getElementById('randomButton').addEventListener('click', function() {
   var outputDiv = document.getElementById('output');
